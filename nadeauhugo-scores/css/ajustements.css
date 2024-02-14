@@ -1,0 +1,151 @@
+:root {
+    --color-body: #F4F7F7;
+    --color-intro: #3192A6;
+    --color-link: #92A531;
+}
+
+a {
+    color: var(--color-link);
+}
+
+.sous-titre {
+    font-size: 0.6em;
+    margin: 10px 0 0 0;
+}
+
+.s-header__nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    top: calc(50% - .2rem);
+    right: 3.6rem;
+}
+
+.s-header__branding .site-title a {
+    color: var(--color-intro);
+}
+
+.s-header__branding a {
+    color: var(--color-link);
+}
+
+.s-header__nav li.actif a {
+    font-weight: bold;
+    color: var(--color-intro);
+}
+
+.s-intro {
+    padding-top: 0;
+    margin-top: 184px;
+}
+
+.s-intro__bg {
+    aspect-ratio: 14/1;
+    background-image : url(../medias/commun/entete.png);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.s-intro__text-huge {
+    --text-huge-size: 15rem;
+    color: var(--color-intro);
+    text-shadow: 2px 0 var(--color-body);
+    margin-top: calc(var(--text-huge-size) / 2 * -1.1);
+}
+
+.text-huge-title {
+    --text-multiplier: 0.7;
+}
+
+.ss-copyright p {
+    margin-bottom: inherit;
+}
+
+.section {
+    padding-top : var(--vspace-2);
+    padding-bottom : var(--vspace-1);
+    margin-bottom: 25px;
+}
+
+.section.contraste {
+    background-color : white;
+}
+
+.scores {
+    width: 92%;
+    max-width: var(--width-grid-max);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.unscore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #BABFCA;
+    border-radius: 8px;
+    width: 300px;
+    height: 185px;
+    margin: 20px auto;
+    padding: 18px;
+    position: relative;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* Ombrage de coin relevé. Source : https://csshint.com/css-box-shadow/ */
+.unscore:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 10px;
+    right: 10px;
+    left: auto;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(7deg);
+    -moz-transform: rotate(7deg);
+    -o-transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    transform: rotate(7deg);
+}
+
+.unscore p {
+    margin-bottom: inherit;
+}
+
+.unscore .joueur {
+    font-size: 1.5em;
+    color: var(--color-1);
+}
+
+.unscore .lescore {
+    font-family: var(--font-2);
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.unscore .jeu {
+
+}
+
+.s-footer {
+    padding-top: calc(1 * var(--space));
+    padding-bottom: var(--vspace-2_5);
+}
+
+.s-footer__bottom a {
+    color: var(--color-link);
+}
+

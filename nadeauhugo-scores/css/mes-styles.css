@@ -1,0 +1,44 @@
+
+.couleur2{
+    background-color: #FFDD95 ;
+}
+.couleur3{
+    background-color: #86A7FC !important;
+}
+.couleur4{
+    background-color: #7691bd;
+}
+section{
+   /** margin: 0px !important;*/
+}
+.ss-copyright{
+    color: white !important;
+}
+.text-pretitle{
+    font-size:7rem !important;
+}
+.image{
+    width: 160px ;
+    height: 200px;
+}
+.anime:hover{
+    transform: scaleX(1.25) !important;
+}
+.fixe{
+    position: fixed;
+}
+span ul li ul {
+    display: none;
+    position: absolute;
+}
+span:hover > ul {
+    display: block;
+}
+th{
+    margin: 10em;
+}
+table{
+    margin: 2em;
+    display: flex;
+    align-content: center;
+}

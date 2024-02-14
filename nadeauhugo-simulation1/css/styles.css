@@ -1,0 +1,110 @@
+body {
+    --couleur-accent: #6028CE;
+    --couleur-accent-fonce: #5524B7;
+}
+
+a {
+    color: var(--couleur-accent);
+}
+
+.categorie {
+    width: 100%;
+}
+
+.categorie .bouton {
+    background-color: var(--couleur-accent);
+    color: white;
+}
+
+.categorie .bouton:hover {
+    background-color: var(--couleur-accent-fonce);
+}
+
+.menuprincipal {
+    height: 35px;
+}
+
+.menuprincipal ul {
+    display: inline;
+}
+
+.menuprincipal ul li {
+    display: inline;
+    float: left;
+}
+
+.menuprincipal ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 15px;
+    display: block;
+}
+
+.menuprincipal ul li.actif a {
+    color: var(--couleur-accent);
+}
+
+.menuprincipal ul li a:hover {
+    color: var(--couleur-accent);
+    border-radius: 8px;
+}
+
+.menumobile {
+    display: none;
+    position: absolute;
+    top: 27px;
+    left: 27px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menumobile div {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #999999;
+    margin: 6px 0;
+    border-radius: 2px;
+}
+
+@media screen and (max-width : 640px) {
+    .menuprincipal {
+        height: 0px;
+    }
+
+    .menumobile {
+        display: block;
+    }
+
+    .menuprincipal:hover ul {
+        display: block;
+    }
+
+    .menuprincipal ul {
+        display: none;
+        padding: 0;
+        position: absolute;
+        top: 43px;
+        left: 27px;
+    }
+
+    .menuprincipal ul li {
+        display: block;
+        float: none;
+        border-top: 1px solid white;
+    }
+
+    .menuprincipal ul li a {
+        padding: 15px;
+    }
+
+    .menuprincipal ul li:first-child {
+        border-top: 3px solid #ffffff;
+    }
+
+    .menumobile-container:hover ul {
+        display: block;
+    }
+}
