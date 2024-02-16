@@ -60,7 +60,10 @@ require "./include/entete.inc"
             <div class="image">
                  <img class="image" src="medias/commun/20240131_113029.jpg">
             </div>
-        </div> <!-- end row -->
+            <div>
+                <a href="facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <div> <!-- end row -->
 
     </section>
 

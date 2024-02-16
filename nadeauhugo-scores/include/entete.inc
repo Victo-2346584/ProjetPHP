@@ -20,8 +20,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/ajustements.css">
     <link rel="stylesheet" href="css/mes-styles.css">
-    <script src="https://kit.fontawesome.com/7a3ae742a8.js" crossorigin="anonymous"></script>
-</head>
+    <script src="https://kit.fontawesome.com/7a3ae742a8.js" crossorigin="anonymous"></script></head>
 <body id="top">
 
 <!-- page wrap
