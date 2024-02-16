@@ -42,7 +42,7 @@ require "./include/entete.inc"
 
         <div class="row">
             <div class="column lg-12">
-                <h2 class="text-pretitle">Hugo</h2>
+                <h2 class="text-pretitle">nthyhy</h2>
 
                 <p class="text-huge-title">
                     maintient des scores
