@@ -4,7 +4,7 @@ include "include/ma-bibliotheque.php";
 try {
 
     $mysqli = new mysqli("127.0.0.1", "root", "mysql", "scores_hugonadeau");
-    define('DEVEL', true);
+    define('DEVEL', false);
 } catch (Exception $e) {
     die('&Eacute;chec lors de la connexion &agrave; la base de donn&eacute;es.');
 }
