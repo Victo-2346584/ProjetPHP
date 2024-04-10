@@ -4,6 +4,26 @@ require "./include/entete.inc"
 ?>
 
 
+<?php
+$query = "SELECT id, description FROM tableinexistante"
+;
+
+$result = $mysqli->query($query);
+
+if ($result ==null){
+    echo_debug("la selection est null");
+}
+else if ($result->num_rows > 0) {
+// sorte les lignes et les mets dans le bon format
+    echo '<div class="scores">';
+    while($row = $result->fetch_assoc()) {
+        echo '<div class="unscore anime"><p class="joueur">' . $row["joueur"] . '</p><p class="lescore">' . $row["lescore"] . '</p><i class="fa-solid fa-star"></i><p>10 janvier 2024</p><p class="jeu">' . $row["jeu"] . '</p></div>';
+    }
+    echo '</div>';
+} else {
+    echo "0 results";
+}
+?>
     <!-- meilleurs scores
     ================================================== -->
     <!--  <section class="couleur2 section">
@@ -46,12 +66,12 @@ require "./include/entete.inc"
                 ce site maintient les scores enregistrer
             </div> <!-- end column -->
             <div class="image">
-                <img class="image" src="medias/commun/20240131_113029.jpg">
+                 <img class="image" src="medias/commun/20240131_113029.jpg">
             </div>
             <div>
-                <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-            </div> <!-- end row -->
+                <a href="facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <div> <!-- end row -->
 
     </section>
 

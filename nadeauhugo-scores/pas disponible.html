@@ -1,0 +1,27 @@
+<?php
+require "./include/entete.inc";
+?>
+<section class="couleur1 s-intro">
+
+    <div class="s-intro__content">
+        <form method="post" action="">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom_usager" maxlength="100" required>
+
+            <label for="courriel">Courriel *</label>
+            <input type="email" id="courriel" name="courriel_usager" required>
+
+            <label for="sujet">Sujet *</label>
+            <input type="text" id="sujet" name="sujet_usager" maxlength="100" required>
+
+            <label for="message">Message *</label>
+            <textarea type="text" id="message" name="sujet_usager" required></textarea>
+
+            <button type="button" value="" ></button>
+        </form>
+    </div>
+
+</section> <!-- end s-intro -->
+
+<?php
+require "./include/pieds_de_page.inc";

@@ -10,8 +10,10 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.0">
-    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="127.0.0.1" id="c7930775-329d-4484-bd8e-916aeb71c005" name="ampps" />
+    </servers>
   </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />

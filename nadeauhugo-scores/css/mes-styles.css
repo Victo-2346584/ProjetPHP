@@ -1,44 +1,108 @@
 
-.couleur2{
-    background-color: #FFDD95 ;
+.couleur2 {
+    background-color: #FFDD95;
 }
-.couleur3{
+
+.couleur3 {
     background-color: #86A7FC !important;
 }
-.couleur4{
+
+.couleur4 {
     background-color: #7691bd;
 }
-section{
-   /** margin: 0px !important;*/
+
+section {
+    /** margin: 0px !important;*/
 }
-.ss-copyright{
+
+.ss-copyright {
     color: white !important;
 }
-.text-pretitle{
-    font-size:7rem !important;
+
+.text-pretitle {
+    font-size: 7rem !important;
 }
-.image{
-    width: 160px ;
+
+.image {
+    width: 160px;
     height: 200px;
 }
-.anime:hover{
+
+.anime:hover {
     transform: scaleX(1.25) !important;
 }
-.fixe{
+
+.fixe {
     position: fixed;
 }
+
 span ul li ul {
     display: none;
     position: absolute;
 }
+
 span:hover > ul {
     display: block;
 }
-th{
+
+th {
     margin: 10em;
 }
-table{
+
+table {
     margin: 2em;
     display: flex;
     align-content: center;
+}
+
+form {
+}
+
+.debug {
+    color: red;
+}
+
+.message {
+    font-size: 1em;
+}
+
+.row23 {
+    display: flex;
+    flex-direction: column;
+    height: 600px !important;
+}
+
+.scoresDetails {
+    display: flex;
+    flex-direction: row;
+    border: #0d0f0f solid 2px;
+    width: fit-content !important;
+    justify-content: center !important;
+
+}
+
+.score {
+    width: fit-content !important;
+}
+
+section {
+    width: 100vw;
+    height: fit-content !important;
+}
+
+.message-erreur-formulaire {
+    color: red !important;
+}
+
+.controle-erreur {
+    border-color: red !important;
+}
+
+.imput {
+    border: #0d0f0f solid 2px;
+    border-block: black;
+}
+
+.case {
+    cursor: grab;
 }

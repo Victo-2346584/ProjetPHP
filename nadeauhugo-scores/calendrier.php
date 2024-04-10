@@ -1,20 +1,8 @@
 <?php
+require "./include/configuration.inc";
 require "./include/entete.inc"
 ?>
-    <!-- intro
-    ================================================== -->
-    <section class="couleur1 s-intro">
 
-        <div class="s-intro__content">
-            <div class="s-intro__text">
-                <h1 class=" couleur1 s-intro__text-huge">
-                    calendrier
-                </h1>
-            </div>
-            <div class="s-intro__bg"></div>
-        </div>
-
-    </section> <!-- end s-intro -->
     <!-- intro
        ================================================== -->
 
@@ -22,13 +10,21 @@ require "./include/entete.inc"
 
         <h2> Frévrier 2024</h2>
         <table>
-        <tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr>
             <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
+                <th>Lun</th>
+                <th>Mar</th>
+                <th>Mer</th>
+                <th>Jeu</th>
+                <th>Ven</th>
+                <th>Sam</th>
+                <th>Dim</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td> 01</td>
-                <td>02 </td>
+                <td>02</td>
                 <td> 03</td>
                 <td> 04</td>
             </tr>
@@ -37,7 +33,7 @@ require "./include/entete.inc"
                 <td> 06</td>
                 <td> 07</td>
                 <td> 08</td>
-                <td>09 </td>
+                <td>09</td>
                 <td> 10</td>
                 <td> 11</td>
             </tr>
@@ -64,12 +60,10 @@ require "./include/entete.inc"
                 <td> 27</td>
                 <td> 28</td>
                 <td> 08</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
-
-
 
 
         </table>
@@ -96,7 +90,7 @@ require "./include/entete.inc"
                 ce site maintient les scores enregistrer
             </div> <!-- end column -->
             <div class="image">
-                <img class="image" src="medias/commun/20240131_113029.jpg">
+                <img class="image" src="medias/commun/20240131_113029.jpg" alt="">
             </div>
         </div> <!-- end row -->
 
@@ -104,3 +98,4 @@ require "./include/entete.inc"
 
 <?php
 require "./include/pieds_de_page.inc";
+require "./include/nettoyage.inc";
