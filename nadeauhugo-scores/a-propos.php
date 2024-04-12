@@ -46,7 +46,7 @@ require "./include/entete.inc"
                 ce site maintient les scores enregistrer
             </div> <!-- end column -->
             <div class="image">
-                <img class="image" src="medias/commun/20240131_113029.jpg">
+                <img class="image" src="medias/commun/20240131_113029.webp" width="180px">
             </div>
             <div>
                 <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
