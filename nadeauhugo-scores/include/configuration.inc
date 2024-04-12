@@ -1,8 +1,10 @@
 <?php
 session_start();
 include "include/ma-bibliotheque.php";
-
-define('HEBERGEMENT_LOCAL', true);
+/*
+ * Quand tu l'envoie tu change hebergement
+ * */
+define('HEBERGEMENT_LOCAL', false);
 
 if (HEBERGEMENT_LOCAL) {
     $serveurBD = '127.0.0.1';
