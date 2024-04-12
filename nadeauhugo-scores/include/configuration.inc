@@ -4,7 +4,7 @@ include "include/ma-bibliotheque.php";
 /*
  * Quand tu l'envoie tu change hebergement
  * */
-define('HEBERGEMENT_LOCAL', true);
+define('HEBERGEMENT_LOCAL', false);
 
 if (HEBERGEMENT_LOCAL) {
     $serveurBD = '127.0.0.1';
