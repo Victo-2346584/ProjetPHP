@@ -16,7 +16,7 @@ require "./include/entete.inc";
 // sorte les lignes et les mets dans le bon format
                 echo '<div class="scores">';
                 while ($row = $result->fetch_assoc()) {
-                    echo '<div class="unscore anime"><p class="courriel">' . $row["courriel"] . '</p><p class="nom">' . $row["nom"] . '</p><p class="sujet">' . $row["sujet"] . '</p><p class="message">' . $row["message"];
+                    echo '<div class="unscore anime"><p class="courriel">' . $row["courriel"] . '</p><p class="nom">' . $row["nom"] . '</p><p class="sujet">' . $row["sujet"] . '</p><p class="message">' . $row["message"] . '</p></div>';
                 }
                 echo '</div>';
             } else {
