@@ -29,7 +29,6 @@ require "./include/entete.inc";
                         ORDER BY lescore desc 
                         limit 3;";
         $result = $mysqli->query($query);
-
         if ($result->num_rows > 0) {
 // sorte les lignes et les mets dans le bon format
             echo '<div class="scores">';

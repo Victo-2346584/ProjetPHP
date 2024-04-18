@@ -69,15 +69,36 @@
                     <li class="<?php if ($nomPage == "formulaire-contact.php") echo "actif" ?>"><a
                                 href="formulaire-contact.php">Contact</a></li>
                     <li class="<?php if ($nomPage == "themes.php") echo "actif" ?>"><a href="themes.php">Thèmes</a></li>
-                </ul>
+                    <li class="<?php if (isset($_SESSION['active'])) {
+                        if ($_SESSION['active']) {
+                            if ($nomPage == "deconnecter.php") echo "actif";
+                        } else {
+                            if ($nomPage == "formulaire-authentification.php") echo "actif";
+                        }
+                    } else {
+                        if ($nomPage == "formulaire-authentification.php") echo "actif";
+                    } ?>">
+                        <?php
+                        if (isset($_SESSION['active'])) {
+                            echo '<a href="deconnecter.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>';
+                        } else {
+                            echo '<a href="formulaire-authentification.php"><i class="fa-solid fa-right-to-bracket"></i></a></li>';
+                        } ?>
             </nav> <!-- end s-header__nav -->
         </div> <!-- end s-header__nav-wrap -->
-
     </header> <!-- end s-header -->
     <!-- intro
 ================================================== -->
     <section class="couleur1 s-intro">
+        <div class="themes">
 
+            <?php if (isset($_SESSION['message_erreur'])) {
+                echo($_SESSION['message_erreur']);
+            } ?>
+            <?php if (isset($_SESSION['bienvenue'])) {
+                echo($_SESSION['bienvenue']);
+            } ?>
+        </div>
         <div class="s-intro__content">
             <div class="s-intro__text">
                 <h1 class=" couleur1 s-intro__text-huge">

@@ -4,9 +4,9 @@ require "./include/entete.inc";
 $_SESSION['message_operation'] = "";
 ?>
     <section class="couleur1 s-intro">
-        <p><a href="./contact.php">
-                <button>liste</button>
-            </a></p>
+        <?php if (isset($_SESSION['active'])) {
+            echo '<p><a href="./contact.php"><button>liste</button></a></p>';
+        } ?>
         <div class="s-intro__content">
             <form method="post" action="traiter-contact.php" id="formulaire" name="formulaireContact">
                 <div>

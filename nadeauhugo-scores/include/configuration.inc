@@ -4,7 +4,7 @@ include "include/ma-bibliotheque.php";
 /*
  * Quand tu l'envoie tu change hebergement
  * */
-define('HEBERGEMENT_LOCAL', false);
+define('HEBERGEMENT_LOCAL', true);
 
 if (HEBERGEMENT_LOCAL) {
     $serveurBD = '127.0.0.1';
@@ -55,8 +55,5 @@ if ($mysqli != null) {
 } else {
     header('location:../pas.php');
 }
-?>
-
-
 ?>
 

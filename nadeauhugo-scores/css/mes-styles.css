@@ -106,3 +106,38 @@ section {
 .case {
     cursor: grab;
 }
+
+.ligne-formulaire {
+    display: grid;
+    grid-template-columns: 110px 1fr; /* Ajuster la taille de la première colonne selon la taille des libellés */
+    margin-bottom: 5px;
+    grid-template-areas: "libelle saisie";
+}
+
+
+input {
+    height: 25px;
+    border: 1px solid #C6CED4;
+    border-radius: 3px;
+}
+
+
+input:focus-visible {
+    border: 1px solid #5C9FA0;
+    outline: none;
+}
+
+
+input[type="submit"] {
+    grid-area: saisie; /* sera affiché dans la colonne des input */
+    font-size: 1em;
+    background-color: #5C9FA0;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: 10px 12px;
+    height: auto;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px 0;
+}

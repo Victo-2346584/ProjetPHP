@@ -24,9 +24,13 @@ require "./include/entete.inc";
             }
         }
         ?>
-        <div class="unscore">
-            <a href="formulaire-jeu.php">ajouter un jeu</a>
-        </div>
+
+
+        <?php
+        if (isset($_SESSION['active'])) {
+            echo '<div class="unscore"><a href="formulaire-jeu.php">ajouter un jeu</a></div>';
+        }
+        ?>
 
 
     </section> <!-- end meilleurs scores -->
