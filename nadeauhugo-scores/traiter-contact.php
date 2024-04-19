@@ -62,8 +62,8 @@ if (isset($_POST)) {
         header("Location: index.php");
         exit();
     } else {
-        $_SESSION['message_erreur'] = "L'enregistrement s'est bien passé, mais l'email ne sera pas envoyé.";
-        header("Location: index.php");
+        $_SESSION['message'] = "L'enregistrement s'est bien passé, mais l'email ne sera pas envoyé.";
+        header("Location: pas.php");
         exit();
     }
 

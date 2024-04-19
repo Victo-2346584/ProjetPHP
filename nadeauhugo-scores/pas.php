@@ -4,7 +4,7 @@ require "./include/entete.inc";
     <section class="couleur1 s-intro">
 
         <div class="s-intro__content">
-            <h1> l'action a échouer ressayer plus tart</h1>
+            <p>l'enregistrement cest bien passe mais pas de courriel envoyer</p>
         </div>
 
     </section> <!-- end s-intro -->

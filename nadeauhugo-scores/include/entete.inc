@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
-    <title><?php if ($row == null) echo "scores";
+    <title><?php if (!isset($titre)) echo "scores";
         else {
             echo $titre;
-        } ?> </title>
+        } ?></title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?php if ($row == null) echo "scores"; else {
+    <meta name="description" content="<?php if (!isset($description)) echo "scores"; else {
         echo $description;
     } ?>"/>
     <meta name="author" content="hugo Na"/>
@@ -36,18 +36,15 @@
 </head>
 <body id="top">
 
-<!-- page wrap
-================================================== -->
+<!-- page wrap -->
 <div class="s-pagewrap">
 
-    <!-- # site header
-    ================================================== -->
+    <!-- # site header -->
     <header class="couleur1 fixe s-header">
 
         <div class="s-header__block">
             <div class="s-header__branding">
                 <p class="site-title">
-                    <a href="index.php" rel="home">Scores</a>
                     <a href="index.php" rel="home">Scores</a>
                 </p>
                 <p class="sous-titre">La plateforme incontournable pour suivre les exploits des joueurs !<sup> <a
@@ -59,24 +56,37 @@
         <div class="row s-header__nav-wrap couleur1">
             <nav class="s-header__nav">
                 <ul>
-                    <li class="<?php if ($nomPage == "jeux.php") echo "actif" ?>"><a href="jeux.php">Jeux</a></li>
-                    <li class="<?php if ($nomPage == "#") echo "actif" ?>"><a href="#">Joueurs</a></li>
-                    <li class="<?php if ($nomPage == "index.php") echo "actif" ?>"><a href="index.php">Scores</a></li>
-                    <li class="<?php if ($nomPage == "a-propos.php") echo "actif" ?>"><a href="a-propos.php">À
-                            propos</a></li>
-                    <li class="<?php if ($nomPage == "calendrier.php") echo "actif" ?>"><a href="calendrier.php">Calendrier</a>
+                    <li class="<?php if (isset($nomPage) && $nomPage == "jeux.php") echo "actif"; ?>"><a
+                                href="jeux.php">Jeux</a></li>
+                    <li class="<?php if (isset($nomPage) && $nomPage == "#") echo "actif"; ?>"><a href="#">Joueurs</a>
                     </li>
-                    <li class="<?php if ($nomPage == "formulaire-contact.php") echo "actif" ?>"><a
+                    <li class="<?php if (isset($nomPage) && $nomPage == "index.php") echo "actif"; ?>"><a
+                                href="index.php">Scores</a></li>
+                    <li class="<?php if (isset($nomPage) && $nomPage == "a-propos.php") echo "actif"; ?>"><a
+                                href="a-propos.php">À propos</a></li>
+                    <li class="<?php if (isset($nomPage) && $nomPage == "calendrier.php") echo "actif"; ?>"><a
+                                href="calendrier.php">Calendrier</a>
+                    </li>
+                    <li class="<?php if (isset($nomPage) && $nomPage == "formulaire-contact.php") echo "actif"; ?>"><a
                                 href="formulaire-contact.php">Contact</a></li>
-                    <li class="<?php if ($nomPage == "themes.php") echo "actif" ?>"><a href="themes.php">Thèmes</a></li>
-                    <li class="<?php if (isset($_SESSION['active'])) {
-                        if ($_SESSION['active']) {
-                            if ($nomPage == "deconnecter.php") echo "actif";
-                        } else {
-                            if ($nomPage == "formulaire-authentification.php") echo "actif";
+                    <li class="<?php if (isset($nomPage) && $nomPage == "themes.php") echo "actif"; ?>"><a
+                                href="themes.php">Thèmes</a></li>
+                    <li class="<?php if (isset($nomPage)) {
+                        if (isset($_SESSION['active'])) {
+                            if ($_SESSION['active']) {
+                                if ($nomPage == "deconnecter.php") {
+                                    echo "actif";
+                                }
+                            } else {
+                                if ($nomPage == "formulaire-authentification.php") {
+                                    echo "actif";
+                                }
+                            }
                         }
                     } else {
-                        if ($nomPage == "formulaire-authentification.php") echo "actif";
+                        if ($nomPage == "formulaire-authentification.php") {
+                            echo "actif";
+                        }
                     } ?>">
                         <?php
                         if (isset($_SESSION['active'])) {
@@ -87,23 +97,19 @@
             </nav> <!-- end s-header__nav -->
         </div> <!-- end s-header__nav-wrap -->
     </header> <!-- end s-header -->
-    <!-- intro
-================================================== -->
+
+    <!-- intro -->
     <section class="couleur1 s-intro">
         <div class="themes">
-
-            <?php if (isset($_SESSION['message_erreur'])) {
-                echo($_SESSION['message_erreur']);
-            } ?>
             <?php if (isset($_SESSION['bienvenue'])) {
                 echo($_SESSION['bienvenue']);
             } ?>
         </div>
         <div class="s-intro__content">
             <div class="s-intro__text">
-                <h1 class=" couleur1 s-intro__text-huge">
+                <h1 class="couleur1 s-intro__text-huge">
                     <?php
-                    if ($row == null) {
+                    if (!isset($h1)) {
                         echo "scores";
                     } else {
                         echo $h1;
