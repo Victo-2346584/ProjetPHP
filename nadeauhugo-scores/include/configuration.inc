@@ -23,8 +23,11 @@ try {
     $mysqli = new mysqli($serveurBD, $usagerBD, $motDePasseBD, $nomBD);
     define('DEVEL', false);
 } catch (Exception $e) {
-    die('&Eacute;chec lors de la connexion &agrave; la base de donn&eacute;es.');
+    die();
     header();
+}
+if ($mysqli = null) {
+    header("location: pas-dispo.php");
 }
 
 if ($mysqli != null) {
@@ -47,13 +50,13 @@ if ($mysqli != null) {
             $titre = $row[2];
             $description = $row[3];
             $h1 = $row[4];
-            $modification = $row[5];
+            $texte = $row[7];
         } else {
             echo "0 results";
         }
     }
 } else {
-    header('location:../pas.php');
+    header('location:pas-dispo.php');
 }
 ?>
 

@@ -1,45 +1,33 @@
 <?php
 require "./include/configuration.inc";
 require "./include/entete.inc";
-
+if (!isset($mysqli)) {
+    echo "<h1>Le site est indisponible en se moments</h1>";
+    die();
+}
 ?>
-
-
-    <!-- meilleurs scores
-    ================================================== -->
-    <section class="couleur2 section row23">
-
-        <div class="themes">
-
-            <?php if (isset($_SESSION['message_erreur'])) {
-                echo($_SESSION['message_erreur']);
-            } ?>
-        </div>
-
-        <!--  <div class="scores">
-                <div class="unscore anime"><p class="joueur">Joueur X</p><p class="lescore">1000</p><i class="fa-solid fa-star"></i><p>10 janvier 2024</p><p class="jeu">Jeu A</p> </div>
-                <div class="unscore anime"><p class="joueur">Joueur Y</p><p class="lescore">987</p><i class="fa-solid fa-star"></i><p>10 janvier 2024</p><p class="jeu">Jeu B</p></div>
-                <div class="unscore anime"><p class="joueur">Joueur Z</p><p class="lescore">836</p><i class="fa-solid fa-star"></i><p>10 janvier 2024</p><p class="jeu">Jeu C</p></div>
-          </div>-->
-        <?php
-        $query = "SELECT scores.id AS id, joueurs.pseudonyme AS joueur, scores.points AS lescore, jeux.nom AS jeu, jeux.icone AS icone
+    <div class="formulaire_score">
+        <a class="btn" href="formulaire-scores.php">Formulaire scores</a>
+    </div>
+<?php
+$query = "SELECT scores.id AS id, joueurs.pseudonyme AS joueur, scores.points AS lescore, jeux.nom AS jeu, jeux.icone AS icone
                         FROM scores
                         INNER JOIN joueurs ON scores.joueur_id = joueurs.id
                         INNER JOIN jeux ON scores.jeu_id = jeux.id
                         ORDER BY lescore desc 
                         limit 3;";
-        $result = $mysqli->query($query);
-        if ($result->num_rows > 0) {
+$result = $mysqli->query($query);
+if ($result->num_rows > 0) {
 // sorte les lignes et les mets dans le bon format
-            echo '<div class="scores">';
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="unscore anime"><p class="joueur">' . $row["joueur"] . '</p><p class="lescore">' . $row["lescore"] . '</p><i class="' . $row["icone"] . '"></i><p>10 janvier 2024</p><p class="jeu">' . $row["jeu"] . '</p>             <button><a href="details-score.php?id=' . $row["id"] . '">Détails</a></button></div>';
-            }
-            echo '</div>';
-        } else {
-            echo "0 results";
-        }
-        ?>
+    echo '<div class="scores">';
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="unscore anime size"><p class="joueur">' . $row["joueur"] . '</p><p class="lescore">' . $row["lescore"] . '</p><i class="' . $row["icone"] . '"></i><p>10 janvier 2024</p><p class="jeu">' . $row["jeu"] . '</p>      <a href="details-score.php?id=' . $row["id"] . '" class="btn">Détails</a></div>';
+    }
+    echo '</div>';
+} else {
+    echo "0 results";
+}
+?>
     </section> <!-- end meilleurs scores -->
 
     <!-- # deuxième section
@@ -48,23 +36,68 @@ require "./include/entete.inc";
 
         <div class="row">
             <div class="column lg-12">
-                <h2 class="text-pretitle">Sous-titre</h2>
-
+                <h2 class="text-pretitle">Formulaire D'inscription</h2>
                 <p class="text-huge-title">
-                    Titre
+                    formulaire
                 </p>
             </div>
         </div>
 
-        <div class="row">
-            <div class="column">
-                Texte colonne 1
-            </div> <!-- end column -->
-            <div class="column">
-                Texte colonne 2
-            </div> <!-- end column -->
-        </div> <!-- end row -->
+        <?php
+        $requete = "SELECT id, nom FROM jeux ORDER BY id";
+        $resultat = $mysqli->query($requete);
+        if (!$resultat) {
+            echo "<p class='message-erreur'>Nous sommes désolés, un problème nous empêche d'afficher le formulaire correctement.</p>";
+            echo_debug($mysqli->error);
+        } else {
+            ?>
+            <div>
+                <form method="post" action="ajouter-joueur.php" id="formulaire" name="formulaireJoueur">
+                    <div>
+                        <label for="pseudonyme">pseudonyme *</label>
+                        <input name="pseudonyme" id="pseudonyme" type="text" maxlength="255" required>
+                    </div>
+                    <div>
+                        <label for="nomFamille">Nom de famille *</label>
+                        <input name="nomFamille" id="nomFamille" type="text" maxlength="255" required>
+                    </div>
+                    <div>
+                        <label for="prenom">prénom *</label>
+                        <input name="prenom" id="prenom" type="text" maxlength="255" required>
+                    </div>
+                    <div>
+                        <label for="jeu">jeu *</label>
+                        <select id="jeu" name="jeu" required>
+                            <?php
+                            if ($mysqli->affected_rows > 0) {
+                                echo "<option value=''>Veuillez choisir jeu favori</option>";
+                                while ($enreg = $resultat->fetch_row()) {
 
+                                    // chaque option de la liste déroulante affichera le titre de la catégorie et retournera son id
+                                    echo "<option value='$enreg[0]'>$enreg[1]</option>";
+                                }
+                            } else {
+                                // le message apparaîtra à la place des options de la liste déroulante
+                                echo "<option value=''>Il n'y a présentement aucune catégorie dans le système.</option>";
+                            }
+
+                            $resultat->free();
+                            ?>
+                        </select>
+                    </div>
+                    <button type="submit">Soumettre l'inscription</button>
+                </form>
+            </div>
+            <?php
+        }
+        ?>
+        <?php
+        if (isset($_SESSION['active'])) {
+            if ($_SESSION['active']) {
+                echo '<a class="btn" href="formulaire-page-accueil.php">Formulaire de page</a>';
+            }
+        }
+        ?>
     </section>
 <?php
 $_SESSION['message_erreur'] = "";

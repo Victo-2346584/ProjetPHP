@@ -87,7 +87,8 @@ form {
 
 section {
     width: 100vw;
-    height: fit-content !important;
+    height: max-content !important;
+    padding-bottom: 30px;
 }
 
 .message-erreur-formulaire {
@@ -140,4 +141,34 @@ input[type="submit"] {
     text-decoration: none;
     cursor: pointer;
     margin: 5px 0;
+}
+
+.size {
+    height: fit-content !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+button {
+    margin: 8px;
+}
+
+#formulaire {
+    margin: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 0.5rem;
+    border: 1px solid #333333;
+}
+
+#titre {
+    margin-left: 20px;
+}
+
+.formulaire_contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

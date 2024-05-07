@@ -5,6 +5,7 @@
  * date: 2024-01-23
  * Time: 16:18
  */
+
 ?>
 <!DOCTYPE html>
 <html lang="fr-CA">
@@ -35,7 +36,19 @@
     ?>
 </head>
 <body id="top">
+<?php
+if (isset($nomPage) && $nomPage == "formulaire-jeu.php" && !isset($_SESSION['active'])) {
+    echo '<div class="container">';
+    echo "Vous ne disposez pas des droits requis pour accéder à cette page.";
+    echo '<p><a class="btn btn-primary" href="index.php">Retour à l\'accueil</a></p>';
+    echo '</div>';
 
+    require 'pieds_de_page.inc';
+
+    require 'nettoyage.inc';
+    die();
+}
+?>
 <!-- page wrap -->
 <div class="s-pagewrap">
 
@@ -58,14 +71,13 @@
                 <ul>
                     <li class="<?php if (isset($nomPage) && $nomPage == "jeux.php") echo "actif"; ?>"><a
                                 href="jeux.php">Jeux</a></li>
-                    <li class="<?php if (isset($nomPage) && $nomPage == "#") echo "actif"; ?>"><a href="#">Joueurs</a>
+                    <li class="<?php if (isset($nomPage) && $nomPage == "a-venir.php") echo "actif"; ?>"><a
+                                href="a-venir.php">Joueurs</a>
                     </li>
                     <li class="<?php if (isset($nomPage) && $nomPage == "index.php") echo "actif"; ?>"><a
                                 href="index.php">Scores</a></li>
                     <li class="<?php if (isset($nomPage) && $nomPage == "a-propos.php") echo "actif"; ?>"><a
-                                href="a-propos.php">À propos</a></li>
-                    <li class="<?php if (isset($nomPage) && $nomPage == "calendrier.php") echo "actif"; ?>"><a
-                                href="calendrier.php">Calendrier</a>
+                                href="a-propos.php">À propos</a>
                     </li>
                     <li class="<?php if (isset($nomPage) && $nomPage == "formulaire-contact.php") echo "actif"; ?>"><a
                                 href="formulaire-contact.php">Contact</a></li>
@@ -94,6 +106,7 @@
                         } else {
                             echo '<a href="formulaire-authentification.php"><i class="fa-solid fa-right-to-bracket"></i></a></li>';
                         } ?>
+                </ul>
             </nav> <!-- end s-header__nav -->
         </div> <!-- end s-header__nav-wrap -->
     </header> <!-- end s-header -->
@@ -122,3 +135,16 @@
         </div>
 
     </section> <!-- end s-intro -->
+    <section class="couleur2 section row23">
+
+        <div class="row">
+            <div class="column">
+                <h2 class="text-pretitle">Tableau de bord</h2>
+                <p class="text-huge-title">Meilleurs scores</p>
+                <?php
+                if (isset($texte))
+
+                    echo "<div class='size'>$texte</div";
+                ?>
+            </div>
+        </div>

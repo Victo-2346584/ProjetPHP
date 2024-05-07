@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $messageErreur .= "Le description est trop long.";
     }
     if ($messageErreur == "") {
-        $requete = 'INSERT INTO jeux (nom, description, icone) VALUES(?,?,?)';
+        $requete = "INSERT INTO jeux (nom, description, icone) VALUES(?,?,?)";
         $stmt = $mysqli->prepare($requete);
 
         if ($stmt) {
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($messageErreur != "") {
         $_SESSION['POST'] = $_POST;
-        header("Location: formulaire_jeu.php");
+        header("Location: formulaire-jeu.php");
     } else {
         $_SESSION['message_erreur'] = "l'enregistrement s'est bien passé";
         header("Location: jeux.php");
