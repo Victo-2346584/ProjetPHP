@@ -26,11 +26,7 @@ try {
     die();
     header();
 }
-if ($mysqli = null) {
-    header("location: pas-dispo.php");
-}
-
-if ($mysqli != null) {
+if (!$mysqli->connect_errno) {
 
 
     $mysqli->set_charset("utf8mb4");
