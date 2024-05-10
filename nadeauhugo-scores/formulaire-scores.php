@@ -24,12 +24,12 @@ if (!$resultat) {
 } else {
     ?>
     <section class="couleur1 s-intro">
-        <p><a class="btn" href="./contact.php">liste</a></p>
         <div class="s-intro__content">
             <?php if (isset($_SESSION['message_erreur'])) {
                 echo($_SESSION['message_erreur']);
             } ?>
-            <form method="post" action="traiter-scores.php" id="formulaire" name="formulaireScore">
+            <form method="post" action="traiter-scores.php" id="formulaire" name="formulaireScore"
+                  class="formulaire_contact">
                 <div>
                     <label for="Jeu">Jeu *</label>
                     <select id="Jeu" name="Jeu" required>

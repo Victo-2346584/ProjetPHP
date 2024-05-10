@@ -172,3 +172,9 @@ button {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.horisontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

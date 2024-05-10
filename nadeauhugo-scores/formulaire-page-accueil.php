@@ -7,7 +7,7 @@ if (!isset($_SESSION['active'])) {
 }
 ?>
     <div class="s-intro__content">
-        <form method="post" action="enregistrer-page-accueil.php">
+        <form method="post" action="enregistrer-page-accueil.php" class="formulaire_contact">
             <button type="submit">Enregister modification</button>
             <div class="ligne-formulaire">
                 <label for="text">texte *</label>

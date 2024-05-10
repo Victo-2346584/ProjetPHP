@@ -11,14 +11,12 @@ if (isset($_SESSION['POST'])) {
 // Fin du code emprunté
 ?>
     <section class="couleur1 s-intro">
-        <p><a href="./contact.php">
-                <button>liste</button>
-            </a></p>
         <div class="s-intro__content">
             <?php if (isset($_SESSION['message_erreur'])) {
                 echo($_SESSION['message_erreur']);
             } ?>
-            <form method="post" action="traiter-jeu.php" id="formulaire" name="formulaireJeux">
+            <form method="post" action="traiter-jeu.php" id="formulaire" name="formulaireJeux"
+                  class="formulaire_contact">
                 <div>
                     <label for="nom">Nom *</label>
                     <input type="text" id="nom" class="imput" name="nom_jeu" maxlength="100"
