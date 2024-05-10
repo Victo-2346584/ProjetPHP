@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/vendor.css?v2">
     <link rel="stylesheet" href="css/styles.css?v2">
     <link rel="stylesheet" href="css/ajustements.css?v2">
-    <link rel="stylesheet" href="css/mes-styles.css?v3">
+    <link rel="stylesheet" href="css/mes-styles.css?v5">
     <link rel="stylesheet" href="ma-bibliotheque-popup/style.css?v2">
     <script src="ma-bibliotheque-popup/script.js" defer></script>
     <script src="js/confirmation-suppression.js" defer></script>
